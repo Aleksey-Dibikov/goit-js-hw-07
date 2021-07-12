@@ -12,6 +12,11 @@
 // Категория: Животные
 // Количество элементов: 4
 
-const numberEll = document.querySelector('#categories');
+const categoriesListEl = document.querySelectorAll('.item');
+console.log(`В списке ${categoriesListEl.length} категории.`);
 
-console.log(numberEll);
+const titleCategory = element => element.forEach(el =>
+    console.log(`Kатегория: ${el.querySelector('h2').textContent}
+     Количество элементов: ${el.querySelectorAll(`li`).length}`)
+)
+titleCategory(categoriesListEl);
