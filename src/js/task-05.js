@@ -8,8 +8,8 @@
 const inputName = document.querySelector('#name-input');
 const outputName = document.querySelector('#name-output');
 console.log(inputName, outputName);
-inputName.addEventListener('input', changeName => {
-    changeName.currentTarget.value.trim() === ''
+inputName.addEventListener('input', changeNameInput => {
+    changeNameInput.currentTarget.value.trim() === ''
         ? outputName.textContent = 'незнакомец'
-        : outputName.textContent = changeName.currentTarget.value
+        : outputName.textContent = changeNameInput.currentTarget.value
 });
