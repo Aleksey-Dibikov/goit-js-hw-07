@@ -9,3 +9,28 @@
   <span id="value">0</span>
   <button type="button" data-action="increment">+1</button>
 </div> */
+
+const decrementBtn = document.querySelector('[data-action = "decrement"]');
+const incrementBtn = document.querySelector('[data-action= "increment"]');
+const valueElem = document.querySelector('#value');
+console.log(decrementBtn, incrementBtn, valueElem);
+
+const counter = {
+  value: 0,
+  increment() {
+    this.value += 1;
+  },
+  decrement() {
+    this.value -= 1;
+  }
+};
+
+incrementBtn.addEventListener('click', function () {
+  counter.increment();
+  valueElem.textContent = counter.value;
+});
+
+decrementBtn.addEventListener('click', function () {
+  counter.decrement();
+  valueElem.textContent = counter.value;
+});
