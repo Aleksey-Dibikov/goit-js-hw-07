@@ -33,6 +33,6 @@ const galleryRef = document.querySelector('#gallery');
 // images.forEach(({ url, alt}) =>
 //   galleryRef.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt='${alt}' width = 320></li>`));
 
-for (let el of images)
-  galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt}" width = 320></li>`);
+for (let { url, alt} of images)
+  galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}" width = 320></li>`);
   console.log(galleryRef);
