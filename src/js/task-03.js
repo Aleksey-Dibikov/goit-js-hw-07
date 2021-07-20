@@ -24,11 +24,15 @@ const images = [
 
 const galleryRef = document.querySelector('#gallery');
 
-const galleryItemElements = ({ url, alt }) => {
-  const addGalleryListImg = `<li class="gallery__item"><img src="${url}" alt="${alt}" width=320 height=150></li>`;
-  return addGalleryListImg;
-};
-const allElements = images.map(galleryItemElements);
-console.log(allElements);
-images.forEach(({ url, alt}) =>
-galleryRef.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt='${alt}' width = 320></li>`));
+// const galleryItemElements = ({ url, alt }) => {
+//   const addGalleryListImg = `<li class="gallery__item"><img src="${url}" alt="${alt}" width=320 height=150></li>`;
+//   return addGalleryListImg;
+// };
+// const allElements = images.map(galleryItemElements);
+// console.log(allElements);
+// images.forEach(({ url, alt}) =>
+//   galleryRef.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt='${alt}' width = 320></li>`));
+
+for (let el of images)
+  galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" alt="${el.alt}" width = 320></li>`);
+  console.log(galleryRef);
