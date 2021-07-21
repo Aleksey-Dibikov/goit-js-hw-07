@@ -24,6 +24,14 @@ const images = [
 
 const galleryRef = document.querySelector('#gallery');
 
+const galleryItemElements = ({ url, alt }) => {
+  const addGalleryListImg = `<li class="gallery__item"><img src="${url}" alt="${alt}" width=320 height=150></li>`;
+  return addGalleryListImg;
+};
+const allElements = images.map(galleryItemElements);
+console.log(allElements);
+galleryRef.insertAdjacentHTML('beforeend', allElements.join(' '));
+
 // const galleryItemElements = ({ url, alt }) => {
 //   const addGalleryListImg = `<li class="gallery__item"><img src="${url}" alt="${alt}" width=320 height=150></li>`;
 //   return addGalleryListImg;
@@ -33,6 +41,6 @@ const galleryRef = document.querySelector('#gallery');
 // images.forEach(({ url, alt}) =>
 //   galleryRef.insertAdjacentHTML('beforeend', `<li><img src='${url}' alt='${alt}' width = 320></li>`));
 
-for (let { url, alt} of images)
-  galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}" width = 320></li>`);
-  console.log(galleryRef);
+// for (let { url, alt} of images)
+//   galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${url}" alt="${alt}" width = 320></li>`);
+//   console.log(galleryRef);
